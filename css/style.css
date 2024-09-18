@@ -129,7 +129,9 @@ ul li{
     padding:10px;
     border-radius: 8px;
     background-color: lightgray;
-    width: 55px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
 }
 
 #tasklist li{

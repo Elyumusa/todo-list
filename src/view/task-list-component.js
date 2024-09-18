@@ -4,7 +4,7 @@ import {createElement} from '../framework/render.js';
 function createTaskListComponent() {
     return (
         `<div><ul id="tasklist">
-                <div id="list_title">Бэклог</div>
+                <div id="list_title">Название блока</div>
                 <li>Название первой задачи</li>
                 <li>Название первой задачи</li>
                 <li>Название первой задачи</li>
