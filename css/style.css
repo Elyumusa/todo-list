@@ -27,8 +27,9 @@ h1{
 }
 section.tasks div{
     display: grid;
-    grid-template-columns: auto auto auto auto; /*10% 10% 10% 10%*/;
-    gap: 100px;
+    grid-template-columns: 10% 10% 10% 20%;
+    gap: 50px;
+    margin-top: 20px;
     /* column-count: 4;
     /* background-color: white; 
     height: 200px;
@@ -63,7 +64,10 @@ ul li{
     padding:10px;
     border-radius: 8px;
     background-color: lightskyblue;
-    width: 80px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    /* line-height: 30px; */
     text-decoration: aqua;
 }
 #process li{
@@ -115,6 +119,21 @@ ul li{
     border-radius: 8px;
     margin: 10px 10px 0px 0px;
     padding: 5px;
+}
+.tasks{
+    display: flex;
+}
+
+
+#list_title{
+    padding:10px;
+    border-radius: 8px;
+    background-color: lightgray;
+    width: 55px;
+}
+
+#tasklist li{
+    border-left-color: lightgray;
 }
 
 /* add-task__button button */

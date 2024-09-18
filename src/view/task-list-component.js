@@ -1,20 +1,21 @@
-import {createElement} from './render.js';
+import {createElement} from '../framework/render.js';
 
 
 function createTaskListComponent() {
     return (
-        `<header class="board-app__header">
-          <div class="board-app__inner">
-            <h1>Список задач</h1>
-          </div>
-        </header>`
+        `<div><ul id="tasklist">
+                <div id="list_title">Бэклог</div>
+                <li>Название первой задачи</li>
+                <li>Название первой задачи</li>
+                <li>Название первой задачи</li>
+          </ul></div>`
       );
 }
 
 
-export default class HeaderComponent {
+export default class TaskListComponent {
   getTemplate() {
-    return createHeaderComponentTemplate();
+    return createTaskListComponent();
   }
 
 

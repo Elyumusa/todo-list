@@ -11,7 +11,7 @@ const RenderPosition = {
     newElement.innerHTML = template;
   
     console.log(template)
-    return newElement;
+    return newElement.firstElementChild;
   }
   
   
