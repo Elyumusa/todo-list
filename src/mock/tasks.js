@@ -44,5 +44,25 @@ export const tasks=[
         'title':`Прочитать Войну и Мир`,
         'status':`basket`
     },
+    // {
+    //     'id':'12',
+    //     'title':'Oтчистить',
+    //     'status':'trash'
+    // },
+    // {
+    //     'id':'13',
+    //     'title':'Oтчистить',
+    //     'status':'trash'
+    // },
+    // {
+    //     'id':'14',
+    //     'title':'Oтчистить',
+    //     'status':'trash'
+    // },
+    // {
+    //     'id':'15',
+    //     'title':'Oтчистить',
+    //     'status':'trash'
+    // }
     
 ]

@@ -5,7 +5,7 @@ import TaskListComponent from './view/task-list-component.js';
 import TasksModel from './model/task-model.js';
 import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
 
-const bodyContainer = document.querySelector('.board-app');
+const bodyContainer = document.querySelector('.board-app'); 
 const formContainer = document.querySelector('.add-task');
 const tasksBoardContainer = document.querySelector('.taskboard');
 const tasksModel=new TasksModel();

@@ -126,6 +126,7 @@ ul li{
     color: white;
     border: none;
     height: 20px;
+    margin-top: 20px;
 }
 #add_button{
     background-color: rgb(33, 127, 204);
@@ -164,5 +165,9 @@ ul li{
 #tasklist li{
     border-left-color: lightgray;
 }
-
+.task__edit{
+    /* padding: 10px; */
+    text-align: center;
+    width: 80px;
+}
 /* add-task__button button */
