@@ -9,9 +9,6 @@ function createTaskComponentTemplate(task) {
         <div class="${status}">
         <div class="task__body">
         <p class="task--view">${title}</p>
-        <input type="text" class="task--input" placeholder="Change and update task"/>
-        </div>
-        <button aria-label="change" class="task__edit" type="button">Change</button>
         </div>`
       );
 }
