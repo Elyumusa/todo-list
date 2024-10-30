@@ -16,6 +16,12 @@ export default class TasksModel{
         this.#boardtasks=value;
     }
 
+     clearTasks(){
+        this.#boardtasks=this.#boardtasks.filter(task=>task.status!=='basket');
+        this._notifyObservers();
+        return this.#boardtasks;
+    }
+
     addTask(title){
         const newTask={
             title,
