@@ -24,7 +24,7 @@ export default class TasksBoardPresenter {
  async init() {
   await this.#tasksModel.init();
    this.#boardTasks=[...this.#tasksModel.tasks];
-   console.log(`after init: ${this.#boardTasks}`)
+   //(`after init: ${this.#boardTasks}`)
    this.#clearBoard();
    render(this.#tasksBoardComponent, this.#boardContainer);
    this.#renderBoard();
@@ -41,12 +41,12 @@ export default class TasksBoardPresenter {
   for (let status in Status) {
     this.status_title=Status[status];
     this.label=StatusLabel[`${this.status_title}`];
-   // console.log(`${this.status_title} label ${this.label}`);
+   // //(`${this.status_title} label ${this.label}`);
     const tasksListComponent = new TasksListComponent({task_status:{status_title:this.status_title,label:this.label}, onTaskDrop: this.#handleTaskDrop.bind(this)});
-    //console.log(`happier now: ${tasksListComponent.status}`);
+    ////(`happier now: ${tasksListComponent.status}`);
     render(tasksListComponent, this.#tasksBoardComponent.element);
     const tasksForStatus=this.#tasksModel.getTasksByStatus(this.status_title);
-    //console.log(`happier baby: ${tasksForStatus.length} ${status}`);
+    ////(`happier baby: ${tasksForStatus.length} ${status}`);
     if (tasksForStatus.length==0) {
       const emptyTaskComponent=new EmptyTaskComponent();
       render(emptyTaskComponent,tasksListComponent.element);
@@ -54,7 +54,7 @@ export default class TasksBoardPresenter {
     for (let j = 0; j < tasksForStatus.length; j++) {
         //const taskComponent = new TaskComponent({task:this.boardTasks[j]});
         //if (this.#boardTasks[j].status==this.status_title) {
-        console.log(`Reached here: ${tasksForStatus[j].title } ${tasksForStatus[j].id }`)
+        //(`Reached here: ${tasksForStatus[j].title } ${tasksForStatus[j].id }`)
           this.#renderTask(tasksForStatus[j],tasksListComponent.element);
           //render(taskComponent, tasksListComponent.element);
         //}
@@ -63,8 +63,15 @@ export default class TasksBoardPresenter {
    
   }
   if (this.status_title=="basket") {
-   // console.log("Why not");
-    this.#renderResetButton(tasksListComponent.element);
+    const basketItems=this.#tasksModel.getTasksByStatus("basket")
+    if (basketItems.length==0) {
+      //console.log("Okayyyy")
+      this.#renderResetButton(tasksListComponent.element,false);
+    }else{
+      this.#renderResetButton(tasksListComponent.element,true);
+    }
+   // //("Why not");
+    
   }
 }
  }
@@ -75,14 +82,14 @@ export default class TasksBoardPresenter {
     console.error('Error when uploading the status of the task', error);
   }
  }
- #renderResetButton(container){
-  console.log("Clear board container");
-  this.#cleanupComponent= new CleanUpButtonComponent({onClick:this.#handleClearBasketClick.bind(this)});
+ #renderResetButton(container,active){
+  //("Clear board container");
+  this.#cleanupComponent= new CleanUpButtonComponent({onClick:this.#handleClearBasketClick.bind(this),active:active});
   render(this.#cleanupComponent, container);
  }
 
  #clearAllTasks(){
-  console.log("Clear board");
+  //("Clear board");
   this.#tasksModel.tasks=this.#tasksModel.clearTasks();
   //this.#clearBoard();
  }
@@ -126,7 +133,7 @@ async #handleClearBasketClick(){
   }
 }
  #clearBoard(){
-  //console.log(`remember: {this.#tasksBoardComponent.element}`)
+  ////(`remember: {this.#tasksBoardComponent.element}`)
   this.#tasksBoardComponent.element.innerHTML='';
  }
 }

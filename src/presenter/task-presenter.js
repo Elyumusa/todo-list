@@ -13,7 +13,7 @@ export default class TaskPresenter {
     init(task){
         this.#task=task;
         //task.id=generateUniqueIdentifier();
-        //console.log(`Task pres: ${task}`)
+        ////(`Task pres: ${task}`)
         this.#taskComponent=new TaskComponent({task:this.#task});
         render(this.#taskComponent,this.#taskListContainer);
     }

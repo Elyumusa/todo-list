@@ -20,7 +20,7 @@ export default class TaskBoardComponent extends AbstractComponent{
   //     this.element = createElement(this.getTemplate());
   //   }
 
-  //   console.log(this.element)
+  //   //(this.element)
   //   return this.element;
   // }
 

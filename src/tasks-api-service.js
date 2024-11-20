@@ -18,7 +18,7 @@ export default class TasksApiService extends ApiService{
     }
 
     async updateTask(task){
-        console.log(`task id: ${task.id}`);
+        //(`task id: ${task.id}`);
         const response = await this._load({
             url: `tasks/${task.id}`,
             method: Method.PUT,

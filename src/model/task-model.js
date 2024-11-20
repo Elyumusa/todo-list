@@ -12,7 +12,7 @@ export default class TasksModel extends Observable{
         this.#tasksApiService=tasksApiService;
 
         this.#tasksApiService.tasks.then((tasks)=>{
-            console.log(tasks);
+            //(tasks);
         })
     }
 
@@ -20,9 +20,9 @@ export default class TasksModel extends Observable{
         try{
             const tasks=await this.#tasksApiService.tasks;
             this.#boardtasks=tasks;
-            console.log(`Observable ${tasks}`);
+            //(`Observable ${tasks}`);
         }catch(error){
-            console.log(`No error I hope: ${error}`)
+            //(`No error I hope: ${error}`)
             this.#boardtasks=[]
         }
         this._notify(UpdateType.INIT);
@@ -32,7 +32,7 @@ export default class TasksModel extends Observable{
     }
     getTasksByStatus(status){
         return this.#boardtasks.filter((task)=>{ 
-            //console.log(`status: ${status} tas.id: ${task.id}`)
+            ////(`status: ${status} tas.id: ${task.id}`)
             return task.status===status});
     }
 
@@ -62,14 +62,14 @@ export default class TasksModel extends Observable{
             throw error;
         }
         const length=this.#boardtasks.push(newTask);
-        console.log(`Iris: ${length}`)
+        //(`Iris: ${length}`)
         this._notifyObservers();
         return newTask;
     }
     async updateTaskStatus(taskId, newStatus){
         const task= this.#boardtasks.find(task => task.id === taskId)
         if (task) {
-           // console.log(`task status: ${task.status} new status ${newStatus}`);
+           // //(`task status: ${task.status} new status ${newStatus}`);
             task.status=newStatus.status_title;
             try {
                const updateTask = await this.#tasksApiService.updateTask(task);

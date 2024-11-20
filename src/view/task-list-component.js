@@ -22,7 +22,7 @@ export default class TaskListComponent extends AbstractComponent{
   }
 
   get template() {
-    //console.log(`heat waves: ${this.status.status_title}`);
+    ////(`heat waves: ${this.status.status_title}`);
     return createTaskListComponent(this.status);
   }
 
